@@ -11,5 +11,5 @@ def add_landmark_measurement(graph, initial_estimate, result):
     # Determine the correct rotation (bearing) and distance from X(4) to L(2) 
     # rotation = 
     # distance = 
-    graph.add(gtsam.BearingRangeFactor2D(X(4), L(2), gtsam.Rot2.fromDegrees(69), 1.5, MEASUREMENT_NOISE))
+    graph.add(gtsam.BearingRangeFactor2D(X(4), L(2), gtsam.Rot2.fromDegrees(70), 1.5, MEASUREMENT_NOISE))
     return graph

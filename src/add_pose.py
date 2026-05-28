@@ -12,7 +12,8 @@ def add_pose(graph, initial_estimate):
     # TODO: Add the odometry factor between X(4) and X(5) to the graph (BetweenFactorPose2)
     
     # Between X(3) and X(4): Move diagonally 2m
-    graph.add(gtsam.BetweenFactorPose2(X(3), X(4), gtsam.Pose2(math.sqrt(2), math.sqrt(2), 0.0), ODOMETRY_NOISE))
+    graph.add(gtsam.BetweenFactorPose2(X(3), X(4), gtsam.Pose2(math.sqrt(2), math.sqrt(2), np.pi/2), ODOMETRY_NOISE))
+    
 
     #graph.add(gtsam.BearingRangeFactor2D(X(4), L(2), gtsam.Rot2.fromDegrees(69), 1.5, MEASUREMENT_NOISE))
 
