@@ -40,6 +40,7 @@ def optimize(graph, initial_estimate):
 
     # TODO: Perform the optimization and print the result
 
+
     return result
 
 def minimize_marginals(graph, initial_estimate, pose_options):
