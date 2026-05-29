@@ -74,6 +74,20 @@ def minimize_errors(graph, initial_estimate, pose_options):
 
     # TODO: create a list of errors (each index corresponds to a pose) and add the error of each pose to the list
     list_of_errors = []
+
+    pose_1 = result.atPose2(X(1))
+    pose_2 = result.atPose2(X(2))
+    pose_3 = result.atPose2(X(3))
+
+    error_1 = np.sqrt((pose_1.x() - 0)**2 + (pose_1.y() - 0)**2 + (pose_1.theta() - 0)**2)
+    error_2 = np.sqrt((pose_2.x() - 2)**2 + (pose_2.y() - 0)**2 + (pose_2.theta() - 0)**2)
+    error_3 = np.sqrt((pose_3.x() - 4)**2 + (pose_3.y() - 0)**2 + (pose_3.theta() - 0)**2)
+
+    list_of_errors.append(error_1)
+    list_of_errors.append(error_2)
+    list_of_errors.append(error_3)
+
+
     # TODO: compute the sum of the errors and return it along with the best pose and landmark
-    sum_of_errors = 0
-    return best_pose, best_landmark, sum_of_errors 
+    sum_of_errors = sum(list_of_errors)
+    return best_pose, best_landmark, sum_of_errors
